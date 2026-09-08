@@ -1,4 +1,4 @@
-import CourseCard from "../components/CourseCard";
+import CourseCard from "./CourseCard";
 
 function Courses() {
   //data list:
@@ -37,37 +37,37 @@ function Courses() {
     },
   ];
 
+
+  //we will replace with from database later
+
   return (
-    <div style={{ padding: "p30", maxWidth: "1000px", margin: "auto" }}>
+    <div>
       <h2>Available courses</h2>
 
       {courseList.length === 0 ? (
         <p style={{ color: "#6483b" }}>No courses Available</p>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            gap: "20px",
-            flexWrap: "wrap",
-            marginTop: "20px",
-          }}
-        >
+        <div style={{ display: 'flex', gap: '20px', justifyContent: 'left', flexWrap: 'wrap'}}>
           {/* Display data */}
           {courseList.map((course) => {
-            <div key={course.title}>
-              {course.isFeatured && (
-                <span style={{ color: "Yellow" }}>Featured</span>
-              )}
+            
+            
+           return (
+             <div key={course.title}>
+              
               <CourseCard
                 title={course.title}
                 category={course.category}
                 instructor={course.instructor}
                 price={course.price}
-              ></CourseCard>
-            </div>;
+              />
+            </div>
+           );
           })}
         </div>
       )}
     </div>
   );
 }
+
+export default Courses;

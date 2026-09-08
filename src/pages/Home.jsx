@@ -2,8 +2,7 @@ import './home.css'
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer'
-import CourseCard  from '../components/CourseCard';
-
+import Courses from '../components/Courses'
 const Home = () => {
   const platFormName = "Learning Platform";
   const coursePeriod = 12;
@@ -28,7 +27,10 @@ const Home = () => {
       <main style={{ padding: '30px', textAlign: 'center' }}>
         <p>Select a course below to begin learning.</p>        
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <CourseCard 
+          
+          <Courses/>
+          
+          {/* <CourseCard 
             title="React JS Fundamentals" 
             category="Frontend" 
             instructor="Fidele" 
@@ -45,7 +47,7 @@ const Home = () => {
             category="Database" 
             instructor="Fidele" 
             price="39.99" 
-          />
+          /> */}
         </div>
       </main>
       </div>

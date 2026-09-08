@@ -7,7 +7,7 @@ function CourseCard({ title, category, instructor, price ,isFeatued}) {
       border: '1px solid #cbd5e1',
       borderRadius: '8px',
       padding: '20px',
-      width: '260px',
+      width: '200px',
       backgroundColor: '#ffffff',
       boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
     }}>
