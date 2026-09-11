@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 
 function Login() {
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
 
-  const navigate = useNavigate();
+  //init nav
+  const navigate=useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Login submitted:', formData);
     alert(`Welcome back, ${formData.email}!`);
+    //navigate
     navigate('/dashboard');
+    
   };
 
   return (
