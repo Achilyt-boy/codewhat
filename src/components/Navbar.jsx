@@ -32,6 +32,16 @@ function Navbar() {
             Home
           </NavLink>
         </li>
+        
+<li style={{ cursor: "pointer" }}>
+          <NavLink
+            to="/blog"
+            style={{color: "white", textDecoration: "none" }}
+          >
+            Blog
+          </NavLink>
+        </li>
+
         <li style={{ cursor: "pointer" }}>
           <NavLink
             to="/login"
