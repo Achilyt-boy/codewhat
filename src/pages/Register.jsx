@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import {Link} from 'react-router-dom'
 function Register() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -22,7 +22,7 @@ function Register() {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '40px auto', padding: '20px', border: '1px solid #cbd5e1', borderRadius: '8px' }}>
+    <div style={{ maxWidth: '400px',minHeight:'500px', margin: '40px auto', padding: '20px', border: '1px solid #cbd5e1', borderRadius: '8px' }}>
       <h2>Create an Account</h2>
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '15px' }}>
@@ -61,6 +61,8 @@ function Register() {
         <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#16a34a', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
           Register
         </button>
+
+        <h2>Already have an account <Link to='/login'>Login</Link></h2>
       </form>
     </div>
   );

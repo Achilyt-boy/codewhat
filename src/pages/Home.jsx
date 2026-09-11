@@ -1,7 +1,5 @@
 import './home.css'
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Footer from '../components/Footer'
 import Courses from '../components/Courses'
 const Home = () => {
   const platFormName = "Learning Platform";
@@ -10,8 +8,6 @@ const Home = () => {
 
   return (
     <>
-    <Navbar />
-      
       <div className="home">
         <h1 className="home-title">Welcome back to {platFormName}</h1>
         <p className="home-subtitle">Your gateway to master React JS ({coursePeriod}-week program)</p>
@@ -52,7 +48,7 @@ const Home = () => {
       </main>
       </div>
 
-      <Footer />
+  
     </>
   );
 };
