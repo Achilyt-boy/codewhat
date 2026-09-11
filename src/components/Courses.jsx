@@ -1,5 +1,5 @@
 import CourseCard from "./CourseCard";
-
+import SearchBar from "./Search";
 function Courses() {
   //data list:
 
@@ -43,6 +43,7 @@ function Courses() {
   return (
     <div>
       <h2>Available courses</h2>
+      <SearchBar/>
 
       {courseList.length === 0 ? (
         <p style={{ color: "#6483b" }}>No courses Available</p>
