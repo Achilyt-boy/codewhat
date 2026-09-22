@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        <h1 className="home-title">Welcome back to {platFormName}</h1>
+        <h1 className="home-title bg-red-500 text-white px-4 py-2">Welcome back to {platFormName}</h1>
         <p className="home-subtitle">Your gateway to master React JS ({coursePeriod}-week program)</p>
         <div className="home-card">
           <h2 className="home-heading">Platform Highlights</h2>
