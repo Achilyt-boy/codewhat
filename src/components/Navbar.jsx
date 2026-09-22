@@ -44,6 +44,15 @@ function Navbar() {
 
         <li style={{ cursor: "pointer" }}>
           <NavLink
+            to="/programs"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            Programs
+          </NavLink>
+        </li>
+
+        <li style={{ cursor: "pointer" }}>
+          <NavLink
             to="/login"
             style={{ color: "white", textDecoration: "none" }}
           >

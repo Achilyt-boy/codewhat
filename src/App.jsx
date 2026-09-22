@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import Post from './pages/Post';
+import Programs from './pages/Programs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blog" element={<Post />} />
+        <Route path="/programs" element={<Programs />} />
       </Routes>
       <Footer />
     </BrowserRouter>
