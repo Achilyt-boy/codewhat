@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const programs = [
   {
@@ -55,7 +53,6 @@ const programs = [
 const Programs = () => {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      <Navbar />
 
       {/* Hero Section */}
       <section className="bg-slate-900 text-white py-16 px-6 text-center">
@@ -112,7 +109,6 @@ const Programs = () => {
         </a>
       </section>
 
-      <Footer />
     </div>
   );
 };

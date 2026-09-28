@@ -1,22 +1,14 @@
-import React from 'react';
+import React from "react";
 
 function SearchBar({ searchTerm, setSearchTerm }) {
   return (
-    <div style={{ marginBottom: '20px' }}>
+    <div className="w-full">
       <input
-        type="text"
-        placeholder="Search courses by title..."
+        type="search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{
-          width: '100%',
-          maxWidth: '400px',
-          padding: '10px 14px',
-          fontSize: '1rem',
-          borderRadius: '6px',
-          border: '1px solid #cbd5e1',
-          outline: 'none'
-        }}
+        placeholder="Search courses by title..."
+        className="w-full max-w-xl rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
       />
     </div>
   );

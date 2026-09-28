@@ -1,48 +1,27 @@
-import React from 'react';
+import React from "react";
 
-// Props are received as an object in the function parameter
-function CourseCard({ title, category, instructor, price ,isFeatued}) {
+function CourseCard({ title, category, instructor, price }) {
   return (
-    <div style={{
-      border: '1px solid #cbd5e1',
-      borderRadius: '8px',
-      padding: '20px',
-      width: '200px',
-      backgroundColor: '#ffffff',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
-    }}>
-
-      
-      <span style={{
-        fontSize: '0.8rem',
-        backgroundColor: '#e0f2fe',
-        color: '#0369a1',
-        padding: '4px 8px',
-        borderRadius: '4px',
-        fontWeight: 'bold'
-      }}>
+    <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+      <span className="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">
         {category}
       </span>
-      <h3 style={{ margin: '12px 0 8px 0', color: '#0f172a' }}>{title}</h3>
-      <p style={{ margin: '0 0 12px 0', color: '#64748b', fontSize: '0.9rem' }}>
-        Instructor: {instructor}
-      </p>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontWeight: 'bold', fontSize: '1.1rem', color: '#16a34a' }}>
-          ${price}
-        </span>
-        <button style={{
-          backgroundColor: '#0284c7',
-          color: '#ffffff',
-          border: 'none',
-          padding: '6px 12px',
-          borderRadius: '4px',
-          cursor: 'pointer'
-        }}>
+
+      <h3 className="mt-4 text-lg font-bold text-slate-900">{title}</h3>
+
+      <p className="mt-1 text-sm text-slate-600">Instructor: {instructor}</p>
+
+      <div className="mt-auto flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+        <span className="text-lg font-bold text-emerald-700">${price}</span>
+
+        <button
+          type="button"
+          className="rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+        >
           Enroll
         </button>
       </div>
-    </div>
+    </article>
   );
 }
 
