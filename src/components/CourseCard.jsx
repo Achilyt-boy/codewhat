@@ -1,13 +1,15 @@
 import React from "react";
 
-function CourseCard({ title, category, instructor, price }) {
+function CourseCard({ title, category, instructor, price, highlightedTitle }) {
   return (
     <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
       <span className="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">
         {category}
       </span>
 
-      <h3 className="mt-4 text-lg font-bold text-slate-900">{title}</h3>
+      <h3 className="mt-4 text-lg font-bold text-slate-900">
+        {highlightedTitle ?? title}
+      </h3>
 
       <p className="mt-1 text-sm text-slate-600">Instructor: {instructor}</p>
 

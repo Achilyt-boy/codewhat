@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CourseCard from "./CourseCard";
 
 const courseList = [
@@ -32,6 +33,46 @@ const courseList = [
     price: 44.99,
   },
 ];
+
+function highlightMatches(value, search) {
+  const normalizedValue = value.toLowerCase();
+  const normalizedSearch = search.toLowerCase();
+
+  if (!normalizedSearch.trim()) {
+    return value;
+  }
+
+  const regex = new RegExp(
+    normalizedSearch
+      .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+      .split("")
+      .map((char, index, array) => {
+        if (index === array.length - 1) {
+          return char;
+        }
+        return `${char}[^${char}]*?`;
+      })
+      .join("|"),
+    "g"
+  );
+
+  const matches = normalizedValue.matchAll(regex);
+  const highlighted = [];
+  let lastIndex = 0;
+
+  for (const match of matches) {
+    highlighted.push(value.slice(lastIndex, match.index));
+    highlighted.push(
+      <mark key={match.index} className="bg-yellow-200 text-yellow-900">
+        {value.slice(match.index, match.index + match[0].length)}
+      </mark>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  highlighted.push(value.slice(lastIndex));
+  return highlighted;
+}
 
 export default function Courses() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -68,15 +109,22 @@ export default function Courses() {
           <p className="mt-6 text-sm text-slate-500">No courses available.</p>
         ) : (
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredCourses.map((course) => (
-              <CourseCard
-                key={course.title}
-                title={course.title}
-                category={course.category}
-                instructor={course.instructor}
-                price={course.price}
-              />
-            ))}
+            {filteredCourses.map((course, index) => {
+              const highlightedTitle = searchTerm.trim()
+                ? highlightMatches(course.title, searchTerm)
+                : course.title;
+
+              return (
+                <CourseCard
+                  key={`${course.title}-${index}`}
+                  title={course.title}
+                  highlightedTitle={highlightedTitle}
+                  category={course.category}
+                  instructor={course.instructor}
+                  price={course.price}
+                />
+              );
+            })}
           </div>
         )}
       </div>
