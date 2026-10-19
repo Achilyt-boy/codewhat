@@ -1,7 +1,27 @@
 @import "tailwindcss";
 
 .welcome{
-border:1px solid black;
-border-radius: 5px;
-background-color:#f2f2f2;
+  border:1px solid black;
+  border-radius: 5px;
+  background-color:#f2f2f2;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-hamburger {
+    display: block !important;
+  }
+  
+  .mobile-nav {
+    display: flex !important;
+  }
+}
+
+/* Ensure main content doesn't overlap with sticky navbar */
+main {
+  padding-top: 10px;
 }
